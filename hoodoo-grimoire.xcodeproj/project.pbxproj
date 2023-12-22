@@ -12,6 +12,7 @@
 		5559BF592B35353A00088ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5559BF582B35353A00088ECF /* Assets.xcassets */; };
 		5559BF5C2B35353A00088ECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5559BF5B2B35353A00088ECF /* Preview Assets.xcassets */; };
 		5559BF652B3535D700088ECF /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559BF642B3535D700088ECF /* CustomTabBar.swift */; };
+		55FDEE662B3540F10014849F /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FDEE652B3540F00014849F /* TabBarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		5559BF582B35353A00088ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5559BF5B2B35353A00088ECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5559BF642B3535D700088ECF /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		55FDEE652B3540F00014849F /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				5559BF642B3535D700088ECF /* CustomTabBar.swift */,
+				55FDEE652B3540F00014849F /* TabBarButton.swift */,
 			);
 			path = "Custom Tab Bar";
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5559BF572B35353800088ECF /* RootView.swift in Sources */,
+				55FDEE662B3540F10014849F /* TabBarButton.swift in Sources */,
 				5559BF652B3535D700088ECF /* CustomTabBar.swift in Sources */,
 				5559BF552B35353800088ECF /* hoodoo_grimoireApp.swift in Sources */,
 			);
@@ -300,6 +304,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +334,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
