@@ -17,6 +17,10 @@ struct RootView: View {
                 .font(.system(size: 40))
                 .foregroundColor(.white)
                 .padding()
+            
+//            List {
+//                
+//            }
             Spacer()
             CustomTabBar(selectedTab: $selectedTab)
         }
