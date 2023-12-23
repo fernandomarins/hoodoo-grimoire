@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5536D5C72B372ACF0050AD6E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536D5C62B372ACF0050AD6E /* LoginView.swift */; };
+		5536D5C92B372B060050AD6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536D5C82B372B060050AD6E /* Extensions.swift */; };
 		5559BF552B35353800088ECF /* hoodoo_grimoireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559BF542B35353800088ECF /* hoodoo_grimoireApp.swift */; };
 		5559BF572B35353800088ECF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559BF562B35353800088ECF /* RootView.swift */; };
 		5559BF592B35353A00088ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5559BF582B35353A00088ECF /* Assets.xcassets */; };
@@ -44,11 +46,13 @@
 		55F110132B36466600A09650 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F110122B36466600A09650 /* ViewModel.swift */; };
 		55F110192B36701200A09650 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F110182B36701200A09650 /* DetailView.swift */; };
 		55F1101E2B36960300A09650 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1101D2B36960300A09650 /* Enum.swift */; };
-		55F110202B36972E00A09650 /* TypeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1101F2B36972E00A09650 /* TypeCircle.swift */; };
+		55F110202B36972E00A09650 /* TypeCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1101F2B36972E00A09650 /* TypeCircleView.swift */; };
 		55FDEE662B3540F10014849F /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FDEE652B3540F00014849F /* TabBarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5536D5C62B372ACF0050AD6E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5536D5C82B372B060050AD6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5559BF512B35353800088ECF /* hoodoo-grimoire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hoodoo-grimoire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5559BF542B35353800088ECF /* hoodoo_grimoireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hoodoo_grimoireApp.swift; sourceTree = "<group>"; };
 		5559BF562B35353800088ECF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		55F110122B36466600A09650 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		55F110182B36701200A09650 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		55F1101D2B36960300A09650 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
-		55F1101F2B36972E00A09650 /* TypeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCircle.swift; sourceTree = "<group>"; };
+		55F1101F2B36972E00A09650 /* TypeCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCircleView.swift; sourceTree = "<group>"; };
 		55FDEE652B3540F00014849F /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +151,8 @@
 				5559BF562B35353800088ECF /* RootView.swift */,
 				55F110182B36701200A09650 /* DetailView.swift */,
 				5559BF632B35359F00088ECF /* Custom Tab Bar */,
-				55F1101F2B36972E00A09650 /* TypeCircle.swift */,
+				55F1101F2B36972E00A09650 /* TypeCircleView.swift */,
+				5536D5C62B372ACF0050AD6E /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				55F1101D2B36960300A09650 /* Enum.swift */,
+				5536D5C82B372B060050AD6E /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -290,12 +296,14 @@
 			files = (
 				55F110112B36461F00A09650 /* Model.swift in Sources */,
 				55F110192B36701200A09650 /* DetailView.swift in Sources */,
-				55F110202B36972E00A09650 /* TypeCircle.swift in Sources */,
+				55F110202B36972E00A09650 /* TypeCircleView.swift in Sources */,
 				55F1101E2B36960300A09650 /* Enum.swift in Sources */,
 				5559BF572B35353800088ECF /* RootView.swift in Sources */,
 				55FDEE662B3540F10014849F /* TabBarButton.swift in Sources */,
 				5559BF652B3535D700088ECF /* CustomTabBar.swift in Sources */,
 				55F110132B36466600A09650 /* ViewModel.swift in Sources */,
+				5536D5C72B372ACF0050AD6E /* LoginView.swift in Sources */,
+				5536D5C92B372B060050AD6E /* Extensions.swift in Sources */,
 				5559BF552B35353800088ECF /* hoodoo_grimoireApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

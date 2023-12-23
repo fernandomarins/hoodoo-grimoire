@@ -30,7 +30,7 @@ struct RootView: View {
                                 
                                 Spacer()
                                 
-                                TypeCircle(type: item.type)
+                                TypeCircleView(type: item.type)
                                     .frame(width: 24, height: 24)
 
                                 Spacer()
