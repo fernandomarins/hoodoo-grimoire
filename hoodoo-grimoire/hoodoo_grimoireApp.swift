@@ -22,7 +22,7 @@ struct hoodoo_grimoireApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            RegisterView()
         }
     }
 }

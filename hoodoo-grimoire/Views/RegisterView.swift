@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  RegisterView.swift
 //  hoodoo-grimoire
 //
 //  Created by Fernando Marins on 23/12/23.
@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct RegisterView: View {
     // MARK: - Propertiers
     @State private var email = ""
     @State private var password = ""
+    @State private var checkPassword = ""
     
     // MARK: - View
     var body: some View {
         VStack() {
-            Text("Gimório Hoodoo")
+            Text("Registre-se")
                 .font(.largeTitle).foregroundColor(Color.white)
                 .padding([.top, .bottom], 40)
                 .shadow(radius: 10.0, x: 20, y: 10)
@@ -27,7 +28,13 @@ struct LoginView: View {
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
                 
-                SecureField("Password", text: $password)
+                SecureField("Senha", text: $password)
+                    .padding()
+                    .background(Color.themeTextField)
+                    .cornerRadius(20.0)
+                    .shadow(radius: 10.0, x: 20, y: 10)
+                
+                SecureField("Digite a senha novamente", text: $checkPassword)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
@@ -35,7 +42,7 @@ struct LoginView: View {
             }.padding([.leading, .trailing], 27.5)
             
             Button(action: {}) {
-                Text("Sign In")
+                Text("Sign Up")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
@@ -46,14 +53,7 @@ struct LoginView: View {
             }.padding(.top, 50)
             
             Spacer()
-            HStack(spacing: 0) {
-                Text("Don't have an account? ")
-                    .foregroundColor(.white)
-                Button(action: {}) {
-                    Text("Sign Up")
-                        .foregroundColor(.white)
-                }
-            }
+
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.darkPurple, .mediumPurple]), startPoint: .top, endPoint: .bottom)
@@ -62,5 +62,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    RegisterView()
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5536D5C72B372ACF0050AD6E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536D5C62B372ACF0050AD6E /* LoginView.swift */; };
 		5536D5C92B372B060050AD6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536D5C82B372B060050AD6E /* Extensions.swift */; };
+		5536D5CB2B372E960050AD6E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536D5CA2B372E960050AD6E /* RegisterView.swift */; };
 		5559BF552B35353800088ECF /* hoodoo_grimoireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559BF542B35353800088ECF /* hoodoo_grimoireApp.swift */; };
 		5559BF572B35353800088ECF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559BF562B35353800088ECF /* RootView.swift */; };
 		5559BF592B35353A00088ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5559BF582B35353A00088ECF /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		5536D5C62B372ACF0050AD6E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5536D5C82B372B060050AD6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5536D5CA2B372E960050AD6E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		5559BF512B35353800088ECF /* hoodoo-grimoire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hoodoo-grimoire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5559BF542B35353800088ECF /* hoodoo_grimoireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hoodoo_grimoireApp.swift; sourceTree = "<group>"; };
 		5559BF562B35353800088ECF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				5559BF632B35359F00088ECF /* Custom Tab Bar */,
 				55F1101F2B36972E00A09650 /* TypeCircleView.swift */,
 				5536D5C62B372ACF0050AD6E /* LoginView.swift */,
+				5536D5CA2B372E960050AD6E /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				5559BF652B3535D700088ECF /* CustomTabBar.swift in Sources */,
 				55F110132B36466600A09650 /* ViewModel.swift in Sources */,
 				5536D5C72B372ACF0050AD6E /* LoginView.swift in Sources */,
+				5536D5CB2B372E960050AD6E /* RegisterView.swift in Sources */,
 				5536D5C92B372B060050AD6E /* Extensions.swift in Sources */,
 				5559BF552B35353800088ECF /* hoodoo_grimoireApp.swift in Sources */,
 			);
