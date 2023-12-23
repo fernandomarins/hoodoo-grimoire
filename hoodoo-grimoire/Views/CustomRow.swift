@@ -20,7 +20,7 @@ struct CustomRow: View {
             Spacer()
 
             Image(systemName: "chevron.right")
-                .foregroundColor(.mediumPurple)
+                .foregroundColor(.white)
                 .frame(width: 44, height: 44)
         }
         .padding(.horizontal)

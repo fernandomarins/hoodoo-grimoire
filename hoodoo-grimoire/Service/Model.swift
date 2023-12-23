@@ -7,12 +7,9 @@
 
 import Foundation
 
-struct Items: Codable {
-    let items: [Item]
-}
-
-struct Item: Codable {
-    let name: String
+struct Item: Codable, Identifiable {
+    let id: UUID
+    let category: Category
+    let name, instructions: String
     let items: [String]
-    let instructions: String
 }

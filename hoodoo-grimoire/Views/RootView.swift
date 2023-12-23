@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
-    
     @StateObject var viewModel = ViewModel()
-    @State var selectedTab: Tabs = .oils
+    @State var selectedTab: Category = .oils
     
     var body: some View {
         VStack {
@@ -20,23 +19,28 @@ struct RootView: View {
                 .padding()
             
             List {
-                CustomRow(text: "Coroa de Sucesso")
-                    .listRowSeparator(.hidden)
-                
-                CustomRow(text: "Corta e Limpa")
-                    .listRowSeparator(.hidden)
+                ForEach(viewModel.selectedItems, id: \.id) { item in
+                    CustomRow(text: item.name.capitalized)
+                        .listRowSeparator(.hidden)
+                        .background(.darkPurple)
+                }
             }
             .listStyle(.plain)
-            .background(.darkPurple)
+
             .listRowSeparator(.hidden)
             
             Spacer()
+            
             CustomTabBar(selectedTab: $selectedTab)
+                .onChange(of: selectedTab) {
+                    viewModel.update(category: selectedTab)
+                }
         }
         .padding()
         .background(Color.darkPurple.edgesIgnoringSafeArea(.all))
         .onAppear(perform: {
             viewModel.readValue()
+            viewModel.update(category: .oils)
         })
     }
 }

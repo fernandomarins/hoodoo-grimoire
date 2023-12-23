@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Tabs: Int {
+enum Category: String, Codable {
     case oils
     case mojos
     case jars
@@ -17,7 +17,7 @@ enum Tabs: Int {
 
 struct CustomTabBar: View {
     
-    @Binding var selectedTab: Tabs
+    @Binding var selectedTab: Category
     
     var body: some View {
         

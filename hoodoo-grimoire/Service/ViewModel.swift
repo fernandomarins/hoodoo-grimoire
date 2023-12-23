@@ -10,31 +10,34 @@ import FirebaseDatabase
 import FirebaseDatabaseSwift
 
 class ViewModel: ObservableObject {
+    @Published var selectedItems = [Item]()
+    
+    var items = [Item]()
     var ref = Database.database().reference()
     
-    @Published var items = [Item]()
-    
     func readValue() {
-        
         ref.child("items").observeSingleEvent(of: .value) { [weak self] snapshot in
-            guard let itemsDictionary = snapshot.value as? [String: Any] else { return }
-            
-            var itemsArray: [Item] = []
-            
-            for (_, itemValue) in itemsDictionary {
-                if let itemData = itemValue as? [String: Any],
-                   let name = itemData["name"] as? String,
-                   let items = itemData["items"] as? [String],
-                   let instructions = itemData["instructions"] as? String {
-                    
-                    let item = Item(name: name, items: items, instructions: instructions)
-                    itemsArray.append(item)
+            guard let data = snapshot.value as? [[String: Any]] else { return }
+
+            let itemsArray: [Item] = data.compactMap { object in
+                guard let categoryString = object["category"] as? String,
+                      let category = Category(rawValue: categoryString),
+                      let name = object["name"] as? String,
+                      let instructions = object["instructions"] as? String,
+                      let items = object["items"] as? [String] else {
+                    return nil
                 }
+
+                return Item(id: UUID(), category: category, name: name, instructions: instructions, items: items)
             }
-            
+
             self?.items = itemsArray
-            
+            self?.update(category: .oils)
         }
+    }
+    
+    func update(category: Category) {
+        selectedItems = items.filter { $0.category == category }
     }
 }
 
