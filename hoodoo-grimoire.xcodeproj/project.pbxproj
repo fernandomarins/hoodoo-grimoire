@@ -119,7 +119,8 @@
 			children = (
 				5559BF542B35353800088ECF /* hoodoo_grimoireApp.swift */,
 				55F10FD72B36442200A09650 /* GoogleService-Info.plist */,
-				55FDEE672B3547420014849F /* Service */,
+				55F110172B366ED200A09650 /* View Model */,
+				55FDEE672B3547420014849F /* Model */,
 				5559BF622B35358F00088ECF /* Views */,
 				5559BF582B35353A00088ECF /* Assets.xcassets */,
 				5559BF5A2B35353A00088ECF /* Preview Content */,
@@ -138,9 +139,9 @@
 		5559BF622B35358F00088ECF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5559BF632B35359F00088ECF /* Custom Tab Bar */,
 				5559BF562B35353800088ECF /* RootView.swift */,
-				55F110142B3647D200A09650 /* CustomRow.swift */,
+				5559BF632B35359F00088ECF /* Custom Tab Bar */,
+				55F110162B366EC600A09650 /* Custom Row */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,13 +155,28 @@
 			path = "Custom Tab Bar";
 			sourceTree = "<group>";
 		};
-		55FDEE672B3547420014849F /* Service */ = {
+		55F110162B366EC600A09650 /* Custom Row */ = {
+			isa = PBXGroup;
+			children = (
+				55F110142B3647D200A09650 /* CustomRow.swift */,
+			);
+			path = "Custom Row";
+			sourceTree = "<group>";
+		};
+		55F110172B366ED200A09650 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				55F110122B36466600A09650 /* ViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		55FDEE672B3547420014849F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				55F110102B36461F00A09650 /* Model.swift */,
-				55F110122B36466600A09650 /* ViewModel.swift */,
 			);
-			path = Service;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -23,10 +23,10 @@ struct RootView: View {
                     CustomRow(text: item.name.capitalized)
                         .listRowSeparator(.hidden)
                         .background(.darkPurple)
+                        .listRowInsets(EdgeInsets())
                 }
             }
             .listStyle(.plain)
-
             .listRowSeparator(.hidden)
             
             Spacer()
