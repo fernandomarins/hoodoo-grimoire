@@ -10,6 +10,6 @@ import Foundation
 struct Item: Codable, Identifiable {
     let id: UUID
     let category: Category
-    let name, instructions: String
+    let name, instructions, description: String
     let items: [String]
 }

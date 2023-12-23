@@ -18,19 +18,20 @@ class ViewModel: ObservableObject {
     func readValue() {
         ref.child("items").observeSingleEvent(of: .value) { [weak self] snapshot in
             guard let data = snapshot.value as? [[String: Any]] else { return }
-
+            
             let itemsArray: [Item] = data.compactMap { object in
                 guard let categoryString = object["category"] as? String,
                       let category = Category(rawValue: categoryString),
                       let name = object["name"] as? String,
                       let instructions = object["instructions"] as? String,
-                      let items = object["items"] as? [String] else {
+                      let items = object["items"] as? [String],
+                      let description = object["description"] as? String else {
                     return nil
                 }
-
-                return Item(id: UUID(), category: category, name: name, instructions: instructions, items: items)
+                
+                return Item(id: UUID(), category: category, name: name, instructions: instructions, description: description, items: items)
             }
-
+            
             self?.items = itemsArray
             self?.update(category: .oils)
         }
@@ -38,6 +39,7 @@ class ViewModel: ObservableObject {
     
     func update(category: Category) {
         selectedItems = items.filter { $0.category == category }
+        
     }
 }
 

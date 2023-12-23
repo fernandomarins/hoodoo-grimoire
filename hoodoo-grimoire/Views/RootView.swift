@@ -21,22 +21,20 @@ struct RootView: View {
                 
                 List {
                     ForEach(viewModel.selectedItems, id: \.id) { item in
-                        ZStack {
-                            NavigationLink(destination: DetailView(item: item)) {
-                                HStack {
-                                    Text(item.name.capitalized)
-                                        .font(.system(size: 24))
-                                        .padding()
-                                        .foregroundColor(.white)
-
-                                    Spacer()
-                                }
-                                .padding(.horizontal)
-                                .background(.darkPurple)
+                        NavigationLink(destination: DetailView(item: item)) {
+                            HStack {
+                                Text(item.name.capitalized)
+                                    .font(.system(size: 24))
+                                    .padding()
+                                    .foregroundColor(.white)
+                                
+                                Spacer()
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .foregroundStyle(.white)
+                            .padding(.horizontal)
+                            .background(.darkPurple)
                         }
+                        .buttonStyle(PlainButtonStyle())
+                        .foregroundStyle(.white)
                         .listRowSeparator(.hidden)
                         .background(.darkPurple)
                         .listRowInsets(EdgeInsets())
@@ -57,7 +55,7 @@ struct RootView: View {
             .onAppear(perform: {
                 viewModel.readValue()
                 viewModel.update(category: .oils)
-        })
+            })
         }
     }
 }
