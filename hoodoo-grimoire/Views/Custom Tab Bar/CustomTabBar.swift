@@ -19,54 +19,36 @@ struct CustomTabBar: View {
     
     @Binding var selectedTab: Category
     
-    var body: some View {
-        
-        HStack {
-            Button {
-                selectedTab = .oils
-            } label: {
-                TabBarButton(buttonText: "Óleos", imageName: "drop", isActive: selectedTab == .oils)
-            }
-            .tint(.white)
-            
-            Button {
-                selectedTab = .mojos
-            } label: {
-                
-                TabBarButton(buttonText: "Mojos", imageName: "archivebox", isActive: selectedTab == .mojos)
-            }
-            .tint(.white)
-            
-            Button {
-                selectedTab = .jars
-            } label: {
-                
-                TabBarButton(buttonText: "Jars", imageName: "waterbottle", isActive: selectedTab == .jars)
-            }
-            .tint(.white)
-            
-            Button {
-                selectedTab = .grisgris
-            } label: {
-                
-                TabBarButton(buttonText: "Gris gris", imageName: "light.beacon.max", isActive: selectedTab == .grisgris)
-            }
-            .tint(.white)
-            
-            Button {
-                selectedTab = .curios
-            } label: {
-                
-                TabBarButton(buttonText: "Cúrios", imageName: "bag", isActive: selectedTab == .curios)
-            }
-            .tint(.white)
+    struct TabBarItem: Identifiable {
+        let id: Category
+        let buttonText: String
+        let imageName: String
+    }
 
+    let tabItems: [TabBarItem] = [
+        TabBarItem(id: .oils, buttonText: "Óleos", imageName: "drop"),
+        TabBarItem(id: .mojos, buttonText: "Mojos", imageName: "archivebox"),
+        TabBarItem(id: .jars, buttonText: "Jars", imageName: "waterbottle"),
+        TabBarItem(id: .grisgris, buttonText: "Gris gris", imageName: "light.beacon.max"),
+        TabBarItem(id: .curios, buttonText: "Cúrios", imageName: "bag")
+    ]
+
+    var body: some View {
+        HStack {
+            ForEach(tabItems) { item in
+                Button {
+                    selectedTab = item.id
+                } label: {
+                    TabBarButton(buttonText: item.buttonText, imageName: item.imageName, isActive: selectedTab == item.id)
+                }
+                .tint(.white)
+            }
         }
         .frame(height: 82)
-        
     }
 }
 
 #Preview {
     CustomTabBar(selectedTab: .constant(.oils))
 }
+
