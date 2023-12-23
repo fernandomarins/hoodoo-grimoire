@@ -39,6 +39,7 @@ struct RootView: View {
                         .background(.darkPurple)
                         .listRowInsets(EdgeInsets())
                     }
+                    .listRowInsets(EdgeInsets())
                 }
                 .listStyle(.plain)
                 .listRowSeparator(.hidden)
@@ -57,6 +58,7 @@ struct RootView: View {
                 viewModel.update(category: .oils)
             })
         }
+        .accentColor(.white)
     }
 }
 
