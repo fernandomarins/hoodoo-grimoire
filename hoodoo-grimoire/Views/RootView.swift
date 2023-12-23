@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject var viewModel = RootViewModel()
-    @State var selectedTab: Category = .oils
-    @Environment(\.dismiss) var logout
+    @StateObject private var viewModel = RootViewModel()
+    @State private var selectedTab: Category = .oils
+    @Environment(\.dismiss) private var logout
     
     var body: some View {
         NavigationView {

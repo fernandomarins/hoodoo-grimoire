@@ -55,7 +55,10 @@ struct LoginView: View {
                 isLoading.toggle()
                 viewModel.login(email: email, password: password) { proceed, errorMessage in
                     if proceed {
+                        email = String()
+                        password = String()
                         isRootViewPresented.toggle()
+                        isLoading.toggle()
                     } else {
                         alertMessage = errorMessage ?? String()
                         isLoading.toggle()

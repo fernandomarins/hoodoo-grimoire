@@ -71,6 +71,7 @@ struct RegisterView: View {
                     viewModel.registerUser(email: email, password: password) { registered, errorMesssage in
                         if registered {
                             dismiss()
+                            isLoading.toggle()
                         } else {
                             isLoading.toggle()
                             alertMessage = errorMesssage ?? String()
