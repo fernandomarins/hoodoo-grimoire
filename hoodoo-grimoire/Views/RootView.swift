@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     
+    @StateObject var viewModel = ViewModel()
     @State var selectedTab: Tabs = .oils
     
     var body: some View {
@@ -18,14 +19,25 @@ struct RootView: View {
                 .foregroundColor(.white)
                 .padding()
             
-//            List {
-//                
-//            }
+            List {
+                CustomRow(text: "Coroa de Sucesso")
+                    .listRowSeparator(.hidden)
+                
+                CustomRow(text: "Corta e Limpa")
+                    .listRowSeparator(.hidden)
+            }
+            .listStyle(.plain)
+            .background(.darkPurple)
+            .listRowSeparator(.hidden)
+            
             Spacer()
             CustomTabBar(selectedTab: $selectedTab)
         }
         .padding()
-        .background(Color.darkPurple)
+        .background(Color.darkPurple.edgesIgnoringSafeArea(.all))
+        .onAppear(perform: {
+            viewModel.readValue()
+        })
     }
 }
 
