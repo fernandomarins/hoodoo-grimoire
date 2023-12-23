@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject var viewModel = ViewModel()
-    @State var selectedTab: Category = .oils
+    @StateObject private var viewModel = RootViewModel()
+    @State private var selectedTab: Category = .oils
+    @Environment(\.dismiss) private var logout
     
     var body: some View {
         NavigationView {
             VStack {
+                Image("logo.png")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 70)
+                
                 Text("Grimódio Hoodoo")
                     .font(.system(size: 40))
                     .foregroundColor(.white)
@@ -30,7 +36,7 @@ struct RootView: View {
                                 
                                 Spacer()
                                 
-                                TypeCircle(type: item.type)
+                                TypeCircleView(type: item.type)
                                     .frame(width: 24, height: 24)
 
                                 Spacer()
@@ -58,10 +64,21 @@ struct RootView: View {
             }
             .padding()
             .background(Color.darkPurple.edgesIgnoringSafeArea(.all))
-            .onAppear(perform: {
+            .onFirstAppear(perform: {
                 viewModel.readValue()
                 viewModel.update(category: .oils)
             })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Logout") {
+                        viewModel.logout { loggedOut in
+                            if loggedOut {
+                                logout()
+                            }
+                        }
+                    }
+                }
+            }
         }
         .accentColor(.white)
     }

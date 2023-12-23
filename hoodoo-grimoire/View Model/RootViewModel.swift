@@ -9,7 +9,7 @@ import Foundation
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-class ViewModel: ObservableObject {
+class RootViewModel: ObservableObject {
     @Published var selectedItems = [Item]()
     
     var items = [Item]()
@@ -49,7 +49,10 @@ class ViewModel: ObservableObject {
     
     func update(category: Category) {
         selectedItems = items.filter { $0.category == category }
-        
+    }
+    
+    func logout(completion: @escaping (Bool) -> Void) {
+        AuthService.shared.logout(completion: completion)
     }
 }
 

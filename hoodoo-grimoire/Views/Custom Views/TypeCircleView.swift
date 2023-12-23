@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TypeCircle: View {
+struct TypeCircleView: View {
     let type: `Type`
     
     var body: some View {
@@ -61,6 +61,6 @@ struct TypeCircle: View {
 }
 
 #Preview {
-    TypeCircle(type: .protection)
+    TypeCircleView(type: .protection)
 }
 
