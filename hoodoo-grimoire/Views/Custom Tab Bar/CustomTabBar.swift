@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-enum Category: String, Codable {
-    case oils
-    case mojos
-    case jars
-    case grisgris
-    case curios
-}
-
 struct CustomTabBar: View {
     
     @Binding var selectedTab: Category

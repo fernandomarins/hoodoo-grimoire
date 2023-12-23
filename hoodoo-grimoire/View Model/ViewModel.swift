@@ -25,11 +25,21 @@ class ViewModel: ObservableObject {
                       let name = object["name"] as? String,
                       let instructions = object["instructions"] as? String,
                       let items = object["items"] as? [String],
-                      let description = object["description"] as? String else {
+                      let description = object["description"] as? String,
+                      let typeString = object["type"] as? String,
+                let type = `Type`(rawValue: typeString) else {
                     return nil
                 }
                 
-                return Item(id: UUID(), category: category, name: name, instructions: instructions, description: description, items: items)
+                return Item(
+                    id: UUID(),
+                    type: type,
+                    category: category,
+                    name: name,
+                    instructions: instructions,
+                    description: description,
+                    items: items
+                )
             }
             
             self?.items = itemsArray

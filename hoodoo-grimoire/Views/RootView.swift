@@ -29,6 +29,11 @@ struct RootView: View {
                                     .foregroundColor(.white)
                                 
                                 Spacer()
+                                
+                                TypeCircle(type: item.type)
+                                    .frame(width: 24, height: 24)
+
+                                Spacer()
                             }
                             .padding(.horizontal)
                             .background(.darkPurple)

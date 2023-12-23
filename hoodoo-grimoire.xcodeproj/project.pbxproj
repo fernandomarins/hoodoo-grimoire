@@ -43,6 +43,8 @@
 		55F110112B36461F00A09650 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F110102B36461F00A09650 /* Model.swift */; };
 		55F110132B36466600A09650 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F110122B36466600A09650 /* ViewModel.swift */; };
 		55F110192B36701200A09650 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F110182B36701200A09650 /* DetailView.swift */; };
+		55F1101E2B36960300A09650 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1101D2B36960300A09650 /* Enum.swift */; };
+		55F110202B36972E00A09650 /* TypeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1101F2B36972E00A09650 /* TypeCircle.swift */; };
 		55FDEE662B3540F10014849F /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FDEE652B3540F00014849F /* TabBarButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		55F110102B36461F00A09650 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		55F110122B36466600A09650 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		55F110182B36701200A09650 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		55F1101D2B36960300A09650 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		55F1101F2B36972E00A09650 /* TypeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCircle.swift; sourceTree = "<group>"; };
 		55FDEE652B3540F00014849F /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 			children = (
 				5559BF542B35353800088ECF /* hoodoo_grimoireApp.swift */,
 				55F10FD72B36442200A09650 /* GoogleService-Info.plist */,
+				55F1101C2B3695FA00A09650 /* Other */,
 				55F110172B366ED200A09650 /* View Model */,
 				55FDEE672B3547420014849F /* Model */,
 				5559BF622B35358F00088ECF /* Views */,
@@ -142,6 +147,7 @@
 				5559BF562B35353800088ECF /* RootView.swift */,
 				55F110182B36701200A09650 /* DetailView.swift */,
 				5559BF632B35359F00088ECF /* Custom Tab Bar */,
+				55F1101F2B36972E00A09650 /* TypeCircle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +167,14 @@
 				55F110122B36466600A09650 /* ViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		55F1101C2B3695FA00A09650 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				55F1101D2B36960300A09650 /* Enum.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		55FDEE672B3547420014849F /* Model */ = {
@@ -276,6 +290,8 @@
 			files = (
 				55F110112B36461F00A09650 /* Model.swift in Sources */,
 				55F110192B36701200A09650 /* DetailView.swift in Sources */,
+				55F110202B36972E00A09650 /* TypeCircle.swift in Sources */,
+				55F1101E2B36960300A09650 /* Enum.swift in Sources */,
 				5559BF572B35353800088ECF /* RootView.swift in Sources */,
 				55FDEE662B3540F10014849F /* TabBarButton.swift in Sources */,
 				5559BF652B3535D700088ECF /* CustomTabBar.swift in Sources */,

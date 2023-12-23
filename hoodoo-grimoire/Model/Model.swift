@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Item: Codable, Identifiable {
+struct Item: Identifiable {
     let id: UUID
+    let type: `Type`
     let category: Category
     let name, instructions, description: String
     let items: [String]
