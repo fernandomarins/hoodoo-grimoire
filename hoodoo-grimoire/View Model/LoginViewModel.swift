@@ -8,14 +8,18 @@
 import Foundation
 
 class LoginViewModel {
-    func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    func login(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
         AuthService.shared.logUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                print(error)
+                completion(false, error.localizedDescription)
                 return
             }
             
-            completion(true)
+            completion(true, nil)
         }
+    }
+    
+    func checkIfNeedToLogin(completion: @escaping (Bool) -> Void) {
+        AuthService.shared.isLoggedIn(completion: completion)
     }
 }

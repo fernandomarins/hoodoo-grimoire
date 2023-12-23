@@ -49,7 +49,10 @@ class RootViewModel: ObservableObject {
     
     func update(category: Category) {
         selectedItems = items.filter { $0.category == category }
-        
+    }
+    
+    func logout(completion: @escaping (Bool) -> Void) {
+        AuthService.shared.logout(completion: completion)
     }
 }
 

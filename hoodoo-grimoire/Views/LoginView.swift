@@ -11,16 +11,24 @@ struct LoginView: View {
     // MARK: - Propertiers
     @State private var email = ""
     @State private var password = ""
+    @State private var alertMessage = ""
     @State private var isRootViewPresented = false
     @State private var isRegisterViewPresented = false
+    @State private var isLoading: Bool = false
     
     var viewModel = LoginViewModel()
     
     // MARK: - View
     var body: some View {
         VStack() {
+            Image("logo.png")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 70)
+            
             Text("Gimório Hoodoo")
-                .font(.largeTitle).foregroundColor(Color.white)
+                .font(.largeTitle)
+                .foregroundColor(.white)
                 .padding([.top, .bottom], 40)
                 .shadow(radius: 10.0, x: 20, y: 10)
             
@@ -44,25 +52,46 @@ struct LoginView: View {
             .padding([.leading, .trailing], 27.5)
             
             Button(action: {
-                viewModel.login(email: email, password: password) { proceed in
+                isLoading.toggle()
+                viewModel.login(email: email, password: password) { proceed, errorMessage in
                     if proceed {
                         isRootViewPresented.toggle()
+                    } else {
+                        alertMessage = errorMessage ?? String()
+                        isLoading.toggle()
                     }
                 }
             }) {
-                Text("Sign In")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.darkPurple)
-                    .cornerRadius(15.0)
-                    .shadow(radius: 10.0, x: 20, y: 10)
+                HStack {
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .scaleEffect(2.0, anchor: .center)
+                    } else {
+                        Text("Sign In")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                }
+                .padding()
+                .frame(width: 300, height: 50)
+                .background(Color.darkPurple)
+                .cornerRadius(15.0)
+                .shadow(radius: 10.0, x: 20, y: 10)
             }
             .padding(.top, 50)
             .fullScreenCover(isPresented: $isRootViewPresented) {
                 RootView()
             }
+            
+            HStack(alignment: .center) {
+                Text(alertMessage)
+                    .foregroundStyle(.white)
+                    .font(.headline)
+                    .frame(width: 200)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.top, 25)
             
             Spacer()
             HStack(spacing: 0) {
@@ -77,6 +106,11 @@ struct LoginView: View {
                 .fullScreenCover(isPresented: $isRegisterViewPresented) {
                     RegisterView()
                 }
+            }
+        }
+        .onAppear {
+            viewModel.checkIfNeedToLogin { isLoggedIn in
+                isRootViewPresented.toggle()
             }
         }
         .background(

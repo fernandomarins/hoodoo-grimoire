@@ -10,11 +10,16 @@ import SwiftUI
 struct RootView: View {
     @StateObject var viewModel = RootViewModel()
     @State var selectedTab: Category = .oils
-    @Environment(\.dismiss) var logout // to logout
+    @Environment(\.dismiss) var logout
     
     var body: some View {
         NavigationView {
             VStack {
+                Image("logo.png")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 70)
+                
                 Text("Grimódio Hoodoo")
                     .font(.system(size: 40))
                     .foregroundColor(.white)
@@ -59,10 +64,21 @@ struct RootView: View {
             }
             .padding()
             .background(Color.darkPurple.edgesIgnoringSafeArea(.all))
-            .onAppear(perform: {
+            .onFirstAppear(perform: {
                 viewModel.readValue()
                 viewModel.update(category: .oils)
             })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Logout") {
+                        viewModel.logout { loggedOut in
+                            if loggedOut {
+                                logout()
+                            }
+                        }
+                    }
+                }
+            }
         }
         .accentColor(.white)
     }
