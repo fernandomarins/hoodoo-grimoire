@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = RootViewModel()
     @State var selectedTab: Category = .oils
     
     var body: some View {

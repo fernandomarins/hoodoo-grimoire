@@ -9,7 +9,7 @@ import Foundation
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-class ViewModel: ObservableObject {
+class RootViewModel: ObservableObject {
     @Published var selectedItems = [Item]()
     
     var items = [Item]()
