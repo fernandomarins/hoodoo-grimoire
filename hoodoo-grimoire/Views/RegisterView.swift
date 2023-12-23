@@ -9,16 +9,21 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel = RegisterViewModel()
-    // MARK: - Propertiers
     @State private var email = ""
     @State private var password = ""
     @State private var checkPassword = ""
     
+    @Environment(\.dismiss) var dismiss
+    
     var passwordsMatch: Bool { password == checkPassword }
     
-    // MARK: - View
     var body: some View {
         VStack() {
+            Image("logo.png")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 70)
+            
             Text("Registre-se")
                 .font(.largeTitle).foregroundColor(Color.white)
                 .padding([.top, .bottom], 40)
@@ -59,7 +64,11 @@ struct RegisterView: View {
             }
             
             Button(action: {
-                viewModel.registerUser(email: email, password: password)
+                viewModel.registerUser(email: email, password: password) { registered in
+                    if registered {
+                        dismiss()
+                    }
+                }
             }) {
                 Text("Sign Up")
                     .font(.headline)

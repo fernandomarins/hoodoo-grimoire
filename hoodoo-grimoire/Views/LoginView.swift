@@ -11,6 +11,10 @@ struct LoginView: View {
     // MARK: - Propertiers
     @State private var email = ""
     @State private var password = ""
+    @State private var isRootViewPresented = false
+    @State private var isRegisterViewPresented = false
+    
+    var viewModel = LoginViewModel()
     
     // MARK: - View
     var body: some View {
@@ -26,15 +30,26 @@ struct LoginView: View {
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                 
                 SecureField("Password", text: $password)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
-            }.padding([.leading, .trailing], 27.5)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+            }
+            .padding([.leading, .trailing], 27.5)
             
-            Button(action: {}) {
+            Button(action: {
+                viewModel.login(email: email, password: password) { proceed in
+                    if proceed {
+                        isRootViewPresented.toggle()
+                    }
+                }
+            }) {
                 Text("Sign In")
                     .font(.headline)
                     .foregroundColor(.white)
@@ -43,15 +58,24 @@ struct LoginView: View {
                     .background(Color.darkPurple)
                     .cornerRadius(15.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
-            }.padding(.top, 50)
+            }
+            .padding(.top, 50)
+            .fullScreenCover(isPresented: $isRootViewPresented) {
+                RootView()
+            }
             
             Spacer()
             HStack(spacing: 0) {
                 Text("Don't have an account? ")
                     .foregroundColor(.white)
-                Button(action: {}) {
+                Button(action: {
+                    isRegisterViewPresented.toggle()
+                }) {
                     Text("Sign Up")
                         .foregroundColor(.white)
+                }
+                .fullScreenCover(isPresented: $isRegisterViewPresented) {
+                    RegisterView()
                 }
             }
         }

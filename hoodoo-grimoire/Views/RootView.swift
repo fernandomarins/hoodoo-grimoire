@@ -10,6 +10,7 @@ import SwiftUI
 struct RootView: View {
     @StateObject var viewModel = RootViewModel()
     @State var selectedTab: Category = .oils
+    @Environment(\.dismiss) var logout // to logout
     
     var body: some View {
         NavigationView {
