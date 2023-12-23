@@ -52,6 +52,10 @@ struct TypeCircle: View {
             return Circle()
                 .fill(Color.orange)
                 .foregroundColor(.white)
+        case .jinx:
+            return Circle()
+                .fill(Color.indigo)
+                .foregroundColor(.white)
         }
     }
 }

@@ -26,4 +26,5 @@ enum `Type`: String {
     case domination
     case heal
     case clearingPaths
+    case jinx
 }
